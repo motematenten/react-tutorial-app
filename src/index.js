@@ -48,7 +48,7 @@ class Game extends React.Component {
         super();
         this.state = {
             history: [{
-                squares: Array(9).fill(null)
+                squares: Array(9).fill(null),
             }],
             stepNumber: 0,
             xIsNext: true,
@@ -64,9 +64,12 @@ class Game extends React.Component {
         }
         squares[i] = this.state.xIsNext ? 'X' : '0';
         this.setState({
-            history: history.concat([{
-                squares: squares,
-            }]),
+            history: history.concat([
+                {
+                    squares: squares
+                }
+            ]),
+            stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
         });
     }
@@ -142,4 +145,3 @@ ReactDOM.render(
     <Game />,
     document.getElementById('root')
 );
-
