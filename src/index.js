@@ -47,9 +47,11 @@ class Game extends React.Component {
     constructor() {
         super();
         this.state = {
-            history: [{
-                squares: Array(9).fill(null),
-            }],
+            history: [
+                {
+                    squares: Array(9).fill(null)
+                }
+            ],
             stepNumber: 0,
             xIsNext: true,
         };
@@ -87,6 +89,7 @@ class Game extends React.Component {
         const winner = calculateWinner(current.squares);
 
         const moves = history.map((step, move) => {
+            debugger;
             const desc = move ?
                 'Go to move #' + move :
                 'Go to move start';
